@@ -1,0 +1,13 @@
+﻿[
+ {"name":"hero-tracado","url":"http://localhost:3100/","width":1440,"height":900,"scrollY":0,"out":"docs/capturas/assinatura-hero-1-tracado-desktop.png"},
+ {"name":"hero-volume","url":"http://localhost:3100/","width":1440,"height":900,"scrollY":300,"out":"docs/capturas/assinatura-hero-2-volume-desktop.png"},
+ {"name":"hero-final","url":"http://localhost:3100/","width":1440,"height":900,"scrollY":700,"out":"docs/capturas/assinatura-hero-3-final-desktop.png"},
+ {"name":"hero-reduzido","url":"http://localhost:3100/","width":1440,"height":900,"reducedMotion":true,"out":"docs/capturas/assinatura-hero-movimento-reduzido.png"},
+ {"name":"explorer","url":"http://localhost:3100/estrutura","width":1440,"height":900,"scrollY":360,"eval":"(async()=>{document.querySelectorAll('.fx__marker')[2].click(); await new Promise(r=>setTimeout(r,1300)); return 1})()","out":"docs/capturas/assinatura-explorador-desktop.png"},
+ {"name":"compare","url":"http://localhost:3100/","width":1440,"height":900,"eval":"(async()=>{document.querySelector('.compare').scrollIntoView({block:'center'}); await new Promise(r=>setTimeout(r,1300)); return 1})()","out":"docs/capturas/assinatura-comparador-desktop.png"},
+ {"name":"contato","url":"http://localhost:3100/contato?produto=conexao-flexivel-laminada-cobre","width":1440,"height":900,"eval":"(async()=>{document.getElementById('formulario').scrollIntoView(); await new Promise(r=>setTimeout(r,1300)); return 1})()","out":"docs/capturas/assinatura-contato-produto-desktop.png"},
+ {"name":"home-celular","url":"http://localhost:3100/","width":390,"height":844,"mobile":true,"fullPage":true,"out":"docs/capturas/assinatura-home-celular.png"},
+ {"name":"explorer-celular","url":"http://localhost:3100/estrutura","width":390,"height":844,"mobile":true,"eval":"(async()=>{const m=document.querySelectorAll('.fx__marker')[1]; m.scrollIntoView({block:'start'}); m.click(); await new Promise(r=>setTimeout(r,1300)); scrollBy(0,-70); return 1})()","out":"docs/capturas/assinatura-explorador-celular.png"},
+ {"name":"contato-celular","url":"http://localhost:3100/contato?produto=barra-aluminio-dobrada","width":390,"height":844,"mobile":true,"eval":"(async()=>{document.getElementById('formulario').scrollIntoView(); await new Promise(r=>setTimeout(r,1300)); return 1})()","out":"docs/capturas/assinatura-contato-produto-celular.png"}
+]
+

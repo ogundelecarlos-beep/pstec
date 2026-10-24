@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7F9"/><stop offset="1" stop-color="#E3E9EE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#D3DCE4" stroke-width="1"/></pattern>
+    <linearGradient id="web" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C5CCD3"/><stop offset=".45" stop-color="#EEF1F4"/><stop offset="1" stop-color="#AAB3BB"/></linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7F9FA"/><stop offset="1" stop-color="#C9D0D6"/></linearGradient>
+    <linearGradient id="bot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6EAEE"/><stop offset="1" stop-color="#B4BCC4"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9AA3AC"/><stop offset="1" stop-color="#7C858E"/></linearGradient>
+    <radialGradient id="shadow"><stop offset="0" stop-color="#0B2545" stop-opacity=".26"/><stop offset="1" stop-color="#0B2545" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)" opacity=".7"/>
+  <ellipse cx="400" cy="520" rx="270" ry="30" fill="url(#shadow)"/>
+
+  <!-- aba superior (recua) -->
+  <path d="M312 172 L488 172 Q500 172 510 164 L572 112 L396 112 L334 164 Q324 172 312 172 Z" fill="url(#top)"/>
+  <path d="M572 112 L572 124 L510 176 Q500 184 488 184 L488 172 Q500 172 510 164 Z" fill="url(#edge)"/>
+  <!-- furos aba superior -->
+  <g fill="#3A444E">
+    <ellipse cx="420" cy="128" rx="11" ry="6"/><ellipse cx="500" cy="128" rx="11" ry="6"/>
+    <ellipse cx="392" cy="154" rx="11" ry="6"/><ellipse cx="472" cy="154" rx="11" ry="6"/>
+  </g>
+  <!-- alma vertical -->
+  <path d="M312 172 H488 V184 V428 H312 Z" fill="url(#web)"/>
+  <path d="M488 184 L500 178 V422 L488 428 Z" fill="url(#edge)"/>
+  <!-- furos centrais 2 x 3 -->
+  <g fill="#2E3740">
+    <circle cx="352" cy="260" r="13"/><circle cx="400" cy="260" r="13"/><circle cx="448" cy="260" r="13"/>
+    <circle cx="352" cy="320" r="13"/><circle cx="400" cy="320" r="13"/><circle cx="448" cy="320" r="13"/>
+  </g>
+  <g fill="#fff" opacity=".35">
+    <circle cx="354" cy="264" r="5"/><circle cx="402" cy="264" r="5"/><circle cx="450" cy="264" r="5"/>
+    <circle cx="354" cy="324" r="5"/><circle cx="402" cy="324" r="5"/><circle cx="450" cy="324" r="5"/>
+  </g>
+  <!-- aba inferior (avança) -->
+  <path d="M312 428 H488 Q478 430 470 438 L412 488 H236 L294 438 Q302 430 312 428 Z" fill="url(#bot)"/>
+  <path d="M236 488 H412 V500 H236 Z" fill="url(#edge)"/>
+  <path d="M412 488 L470 438 V450 L412 500 Z" fill="#8E979F"/>
+  <g fill="#3A444E">
+    <ellipse cx="318" cy="448" rx="11" ry="6"/><ellipse cx="398" cy="448" rx="11" ry="6"/>
+    <ellipse cx="290" cy="474" rx="11" ry="6"/><ellipse cx="370" cy="474" rx="11" ry="6"/>
+  </g>
+  <path d="M320 180 V420" stroke="#fff" stroke-width="3" opacity=".6"/>
+
+  <g stroke="#1455A3" stroke-width="1.5" fill="none" opacity=".55">
+    <path d="M560 172 H600 M560 428 H600 M584 172 V428"/>
+    <path d="M584 172 l-5 10 h10 z M584 428 l-5 -10 h10 z" fill="#1455A3"/>
+    <path d="M400 230 V350 M330 290 H470" stroke-dasharray="6 6"/>
+  </g>
+</svg>

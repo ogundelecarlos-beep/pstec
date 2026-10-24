@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7F9"/><stop offset="1" stop-color="#E3E9EE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#D3DCE4" stroke-width="1"/></pattern>
+    <pattern id="braid" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <rect width="18" height="18" fill="#8E979F"/>
+      <path d="M-2 11 L7 2 M7 20 L16 11 M11 -2 L20 7" stroke="#E2E6EA" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-2 7 L7 16 M7 -2 L16 7 M11 20 L20 11" stroke="#BCC3CA" stroke-width="5" stroke-linecap="round"/>
+      <path d="M2 4 L5 7 M11 13 L14 16" stroke="#6B747C" stroke-width="1.2"/>
+    </pattern>
+    <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".35" stop-color="#fff" stop-opacity=".05"/>
+      <stop offset=".7" stop-color="#1B2A4A" stop-opacity=".18"/><stop offset="1" stop-color="#1B2A4A" stop-opacity=".45"/>
+    </linearGradient>
+    <linearGradient id="tin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFCFD"/><stop offset=".5" stop-color="#D6DBE0"/><stop offset="1" stop-color="#A3ABB3"/></linearGradient>
+    <radialGradient id="shadow"><stop offset="0" stop-color="#0B2545" stop-opacity=".26"/><stop offset="1" stop-color="#0B2545" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)" opacity=".7"/>
+  <ellipse cx="400" cy="420" rx="340" ry="30" fill="url(#shadow)"/>
+
+  <!-- corpo trançado, levemente abaulado -->
+  <path d="M236 248 C340 232 460 232 564 248 V352 C460 368 340 368 236 352 Z" fill="url(#braid)"/>
+  <path d="M236 248 C340 232 460 232 564 248 V352 C460 368 340 368 236 352 Z" fill="url(#tube)"/>
+
+  <!-- luvas de compressão -->
+  <rect x="206" y="240" width="40" height="120" rx="6" fill="url(#tin)"/>
+  <rect x="554" y="240" width="40" height="120" rx="6" fill="url(#tin)"/>
+  <!-- terminais planos -->
+  <path d="M72 266 H210 V334 H72 Q60 334 60 322 V278 Q60 266 72 266 Z" fill="url(#tin)"/>
+  <path d="M590 266 H728 Q740 266 740 278 V322 Q740 334 728 334 H590 Z" fill="url(#tin)"/>
+  <circle cx="118" cy="300" r="17" fill="#2F3942"/><circle cx="118" cy="297" r="17" fill="#3E4953"/>
+  <circle cx="682" cy="300" r="17" fill="#2F3942"/><circle cx="682" cy="297" r="17" fill="#3E4953"/>
+  <path d="M72 270 H206" stroke="#fff" stroke-width="3" opacity=".8"/>
+  <path d="M594 270 H728" stroke="#fff" stroke-width="3" opacity=".8"/>
+
+  <g stroke="#1455A3" stroke-width="1.5" fill="none" opacity=".55">
+    <path d="M236 200 V170 M564 200 V170 M236 184 H564"/>
+    <path d="M236 184 l10 -5 v10 z M564 184 l-10 -5 v10 z" fill="#1455A3"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" preserveAspectRatio="none">
+  <!-- Silhueta da representação conceitual: restringe o reflexo ao objeto. -->
+  <path d="M190 314 C250 314 270 174 340 174 C410 174 400 424 470 424 C540 424 530 314 600 314" fill="none" stroke="#000" stroke-width="58" stroke-linejoin="round"/>
+  <rect x="70" y="276" width="126" height="70" rx="3" fill="#000"/>
+  <rect x="594" y="276" width="136" height="70" rx="3" fill="#000"/>
+</svg>

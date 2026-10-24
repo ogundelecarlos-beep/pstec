@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7F9"/><stop offset="1" stop-color="#E3E9EE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#D3DCE4" stroke-width="1"/></pattern>
+    <linearGradient id="bronze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7C27C"/><stop offset=".45" stop-color="#B98A3E"/><stop offset="1" stop-color="#7C5A22"/></linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F4650"/><stop offset="1" stop-color="#1E2329"/></linearGradient>
+    <pattern id="braid" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#8A5A2B"/>
+      <path d="M-2 9 L5 2 M5 16 L12 9 M9 -2 L16 5" stroke="#E2B27A" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-2 5 L5 12 M5 -2 L12 5 M9 16 L16 9" stroke="#C08850" stroke-width="4" stroke-linecap="round"/>
+    </pattern>
+    <radialGradient id="shadow"><stop offset="0" stop-color="#0B2545" stop-opacity=".26"/><stop offset="1" stop-color="#0B2545" stop-opacity="0"/></radialGradient>
+    <g id="nut">
+      <polygon points="-16,0 -8,-14 8,-14 16,0 8,14 -8,14" fill="#D4AE62" stroke="#8B6729" stroke-width="2"/>
+      <circle r="6" fill="#9C7635"/>
+    </g>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)" opacity=".7"/>
+  <ellipse cx="400" cy="450" rx="330" ry="28" fill="url(#shadow)"/>
+
+  <!-- placa isolante escura ao fundo -->
+  <rect x="100" y="250" width="600" height="100" rx="6" fill="url(#dark)"/>
+  <!-- barras de contato -->
+  <rect x="80" y="214" width="640" height="34" rx="4" fill="url(#bronze)"/>
+  <rect x="80" y="352" width="640" height="34" rx="4" fill="url(#bronze)"/>
+  <path d="M84 220 H716 M84 358 H716" stroke="#F6DEAA" stroke-width="2" opacity=".8"/>
+
+  <!-- cordoalha lateral em curva -->
+  <path d="M250 238 C320 160 480 160 550 238 L540 248 C470 182 330 182 260 248 Z" fill="url(#braid)"/>
+  <path d="M250 362 C320 440 480 440 550 362 L540 352 C470 418 330 418 260 352 Z" fill="url(#braid)"/>
+
+  <!-- parafusos e porcas -->
+  <use href="#nut" x="128" y="231"/><use href="#nut" x="190" y="231"/>
+  <use href="#nut" x="610" y="231"/><use href="#nut" x="672" y="231"/>
+  <use href="#nut" x="128" y="369"/><use href="#nut" x="190" y="369"/>
+  <use href="#nut" x="610" y="369"/><use href="#nut" x="672" y="369"/>
+
+  <g stroke="#1455A3" stroke-width="1.5" fill="none" opacity=".55">
+    <path d="M740 214 H770 M740 386 H770 M760 214 V386"/>
+    <path d="M760 214 l-5 10 h10 z M760 386 l-5 -10 h10 z" fill="#1455A3"/>
+  </g>
+</svg>

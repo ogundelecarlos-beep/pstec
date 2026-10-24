@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7F9"/><stop offset="1" stop-color="#E3E9EE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#D3DCE4" stroke-width="1"/></pattern>
+    <linearGradient id="cu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EDA877"/><stop offset=".5" stop-color="#C46E38"/><stop offset="1" stop-color="#83401A"/></linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8ECEF"/><stop offset="1" stop-color="#AEB7BF"/></linearGradient>
+    <radialGradient id="shadow"><stop offset="0" stop-color="#0B2545" stop-opacity=".26"/><stop offset="1" stop-color="#0B2545" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)" opacity=".7"/>
+  <ellipse cx="400" cy="480" rx="320" ry="26" fill="url(#shadow)"/>
+
+  <!-- base de montagem -->
+  <rect x="100" y="420" width="600" height="40" rx="6" fill="url(#base)"/>
+  <!-- articulação -->
+  <rect x="150" y="330" width="90" height="90" rx="6" fill="url(#cu)"/>
+  <circle cx="195" cy="360" r="16" fill="#5B3014"/><circle cx="195" cy="360" r="8" fill="#E9B48A"/>
+  <!-- mandíbula de contato fixo -->
+  <path d="M560 300 H600 V420 H560 Z M620 300 H660 V420 H620 Z" fill="url(#cu)"/>
+  <path d="M560 300 Q580 286 600 300 M620 300 Q640 286 660 300" stroke="#83401A" stroke-width="3" fill="none"/>
+  <!-- lâminas paralelas em abertura -->
+  <g transform="rotate(-24 195 360)">
+    <rect x="186" y="336" width="440" height="20" rx="4" fill="url(#cu)"/>
+    <rect x="186" y="364" width="440" height="20" rx="4" fill="url(#cu)"/>
+    <rect x="590" y="330" width="44" height="60" rx="6" fill="#1B2A4A"/>
+  </g>
+  <!-- trajetória de fechamento -->
+  <path d="M600 200 A420 420 0 0 1 612 300" stroke="#1455A3" stroke-width="2" stroke-dasharray="8 7" fill="none" opacity=".7"/>
+  <path d="M612 300 l-10 -12 l14 -2 z" fill="#1455A3" opacity=".7"/>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A1629"/><stop offset=".6" stop-color="#14254A"/><stop offset="1" stop-color="#1B2A4A"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".05"/></pattern>
+    <pattern id="gridL" width="240" height="240" patternUnits="userSpaceOnUse"><path d="M240 0H0V240" fill="none" stroke="#FFFFFF" stroke-opacity=".08"/></pattern>
+    <radialGradient id="glow" cx=".72" cy=".5" r=".5"><stop offset="0" stop-color="#E08A4E" stop-opacity=".22"/><stop offset="1" stop-color="#E08A4E" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#D3D9DF"/><stop offset="1" stop-color="#8E979F"/></linearGradient>
+    <path id="lam" d="M820 470 C900 470 930 300 1010 300 C1094 300 1084 640 1168 640 C1252 640 1238 470 1310 470" fill="none" stroke-width="7"/>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="900" fill="url(#gridL)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- retícula de pontos (eco da marca) -->
+  <g fill="#7AB929" opacity=".5">
+    <circle cx="1400" cy="120" r="4"/><circle cx="1430" cy="120" r="5"/><circle cx="1460" cy="120" r="4"/><circle cx="1490" cy="120" r="3"/>
+    <circle cx="1400" cy="150" r="5"/><circle cx="1430" cy="150" r="6"/><circle cx="1460" cy="150" r="5"/><circle cx="1490" cy="150" r="4"/><circle cx="1520" cy="150" r="3"/>
+    <circle cx="1430" cy="180" r="5"/><circle cx="1460" cy="180" r="6"/><circle cx="1490" cy="180" r="5"/><circle cx="1520" cy="180" r="4"/>
+    <circle cx="1460" cy="210" r="4"/><circle cx="1490" cy="210" r="4"/><circle cx="1520" cy="210" r="3"/>
+  </g>
+
+  <!-- linhas técnicas -->
+  <g stroke="#7AB929" stroke-opacity=".55" fill="none" stroke-width="1.5">
+    <path d="M700 760 H1440 M700 740 V780 M1440 740 V780"/>
+    <circle cx="1010" cy="300" r="64" stroke-dasharray="5 7"/>
+    <path d="M1010 200 V236 M1010 364 V400 M910 300 H946 M1074 300 H1110"/>
+  </g>
+
+  <!-- conexão laminada em destaque -->
+  <g>
+    <use xlink:href="#lam" stroke="#6E3415"/>
+    <use xlink:href="#lam" y="6" stroke="#C9773F"/>
+    <use xlink:href="#lam" y="12" stroke="#A85A2A"/>
+    <use xlink:href="#lam" y="18" stroke="#DE9461"/>
+    <use xlink:href="#lam" y="24" stroke="#B4663A"/>
+    <use xlink:href="#lam" y="30" stroke="#E6A273"/>
+    <use xlink:href="#lam" y="36" stroke="#B0612F"/>
+    <use xlink:href="#lam" y="42" stroke="#D98B55"/>
+    <use xlink:href="#lam" y="48" stroke="#A3542A"/>
+    <use xlink:href="#lam" y="54" stroke="#CF8048"/>
+    <use xlink:href="#lam" y="60" stroke="#9A4C22"/>
+    <use xlink:href="#lam" y="66" stroke="#C47039"/>
+    <use xlink:href="#lam" y="72" stroke="#7A3A18"/>
+    <use xlink:href="#lam" y="14" stroke="#FFE2C4" stroke-width="3" opacity=".5"/>
+  </g>
+  <path d="M640 458 H826 V552 H640 Z" fill="url(#tin)"/>
+  <ellipse cx="704" cy="503" rx="24" ry="19" fill="#26303A"/>
+  <path d="M1304 458 H1490 V552 H1304 Z" fill="url(#tin)"/>
+  <ellipse cx="1426" cy="503" rx="24" ry="19" fill="#26303A"/>
+</svg>

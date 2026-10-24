@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7F9"/><stop offset="1" stop-color="#E3E9EE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#D3DCE4" stroke-width="1"/></pattern>
+    <pattern id="sleeve" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#C9CFD5"/>
+      <path d="M0 8 L8 0 L16 8 L8 16 Z" fill="none" stroke="#2F6FCB" stroke-width="3.2"/>
+      <path d="M8 0 L16 8" stroke="#5B93E3" stroke-width="1.4"/>
+    </pattern>
+    <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0B2545" stop-opacity=".42"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A525C"/><stop offset=".4" stop-color="#2A3038"/><stop offset="1" stop-color="#15191E"/></linearGradient>
+    <linearGradient id="inox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFBFC"/><stop offset=".5" stop-color="#C8CFD5"/><stop offset="1" stop-color="#8F98A1"/></linearGradient>
+    <radialGradient id="shadow"><stop offset="0" stop-color="#0B2545" stop-opacity=".26"/><stop offset="1" stop-color="#0B2545" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)" opacity=".7"/>
+  <ellipse cx="400" cy="440" rx="350" ry="28" fill="url(#shadow)"/>
+
+  <!-- barra principal com olhal -->
+  <path d="M70 300 Q70 268 102 268 H700 V332 H102 Q70 332 70 300 Z" fill="url(#bar)"/>
+  <circle cx="110" cy="300" r="20" fill="#E3E9EE"/>
+  <circle cx="110" cy="300" r="20" fill="none" stroke="#0E1116" stroke-width="3"/>
+  <path d="M102 272 H700" stroke="#79838E" stroke-width="2"/>
+
+  <!-- chapa de fixação e parafuso -->
+  <rect x="236" y="246" width="70" height="108" rx="4" fill="url(#inox)"/>
+  <circle cx="271" cy="300" r="13" fill="#7C858E"/><path d="M262 300 h18" stroke="#3E4953" stroke-width="4"/>
+
+  <!-- cordoalha com luva -->
+  <path d="M300 222 C390 210 480 210 560 222 V262 C480 274 390 274 300 262 Z" fill="url(#sleeve)"/>
+  <path d="M300 222 C390 210 480 210 560 222 V262 C480 274 390 274 300 262 Z" fill="url(#tube)"/>
+  <rect x="292" y="214" width="22" height="56" rx="4" fill="url(#inox)"/>
+  <rect x="548" y="214" width="22" height="56" rx="4" fill="url(#inox)"/>
+
+  <!-- grampo em inox na extremidade -->
+  <path d="M640 250 H760 Q772 250 772 262 V272 H662 V328 H772 V338 Q772 350 760 350 H640 Z" fill="url(#inox)"/>
+  <rect x="704" y="236" width="12" height="128" rx="3" fill="#9AA3AC"/>
+  <circle cx="710" cy="230" r="12" fill="url(#inox)" stroke="#8F98A1" stroke-width="2"/>
+  <circle cx="710" cy="370" r="12" fill="url(#inox)" stroke="#8F98A1" stroke-width="2"/>
+
+  <g stroke="#1455A3" stroke-width="1.5" fill="none" opacity=".55">
+    <path d="M300 190 V160 M560 190 V160 M300 174 H560"/>
+    <path d="M300 174 l10 -5 v10 z M560 174 l-10 -5 v10 z" fill="#1455A3"/>
+  </g>
+</svg>

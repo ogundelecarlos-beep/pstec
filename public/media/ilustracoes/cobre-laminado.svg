@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F7F9"/><stop offset="1" stop-color="#E3E9EE"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#D3DCE4" stroke-width="1"/></pattern>
+    <linearGradient id="tin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFCFD"/><stop offset=".45" stop-color="#D9DEE3"/><stop offset="1" stop-color="#A9B1B9"/></linearGradient>
+    <linearGradient id="tinSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B7BEC5"/><stop offset="1" stop-color="#8C959E"/></linearGradient>
+    <radialGradient id="shadow"><stop offset="0" stop-color="#0B2545" stop-opacity=".28"/><stop offset="1" stop-color="#0B2545" stop-opacity="0"/></radialGradient>
+    <path id="lam" d="M222 270 C282 270 300 150 362 150 C426 150 418 390 482 390 C546 390 536 270 590 270" fill="none" stroke-width="5" stroke-linecap="butt"/>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)" opacity=".7"/>
+  <ellipse cx="410" cy="500" rx="330" ry="34" fill="url(#shadow)"/>
+
+  <!-- lâminas sobrepostas -->
+  <g>
+    <use xlink:href="#lam" stroke="#6E3415"/>
+    <use xlink:href="#lam" y="4" stroke="#C9773F"/>
+    <use xlink:href="#lam" y="8" stroke="#A85A2A"/>
+    <use xlink:href="#lam" y="12" stroke="#DE9461"/>
+    <use xlink:href="#lam" y="16" stroke="#B4663A"/>
+    <use xlink:href="#lam" y="20" stroke="#E6A273"/>
+    <use xlink:href="#lam" y="24" stroke="#B0612F"/>
+    <use xlink:href="#lam" y="28" stroke="#D98B55"/>
+    <use xlink:href="#lam" y="32" stroke="#A3542A"/>
+    <use xlink:href="#lam" y="36" stroke="#CF8048"/>
+    <use xlink:href="#lam" y="40" stroke="#9A4C22"/>
+    <use xlink:href="#lam" y="44" stroke="#C47039"/>
+    <use xlink:href="#lam" y="48" stroke="#7A3A18"/>
+  </g>
+  <!-- brilho -->
+  <use xlink:href="#lam" y="10" stroke="#FFE2C4" stroke-width="2" opacity=".55"/>
+
+  <!-- terminal esquerdo -->
+  <path d="M84 262 H226 V326 H84 Z" fill="url(#tin)"/>
+  <path d="M84 326 H226 V340 H84 Z" fill="url(#tinSide)"/>
+  <path d="M206 262 h20 v78 h-20 z" fill="#C88550" opacity=".55"/>
+  <ellipse cx="134" cy="294" rx="17" ry="14" fill="#5B6670"/>
+  <ellipse cx="134" cy="291" rx="17" ry="11" fill="#2F3942"/>
+  <!-- terminal direito -->
+  <path d="M586 262 H728 V326 H586 Z" fill="url(#tin)"/>
+  <path d="M586 326 H728 V340 H586 Z" fill="url(#tinSide)"/>
+  <path d="M586 262 h20 v78 h-20 z" fill="#C88550" opacity=".55"/>
+  <ellipse cx="678" cy="294" rx="17" ry="14" fill="#5B6670"/>
+  <ellipse cx="678" cy="291" rx="17" ry="11" fill="#2F3942"/>
+
+  <!-- linhas técnicas decorativas (sem cotas) -->
+  <g stroke="#1455A3" stroke-width="1.5" fill="none" opacity=".55">
+    <path d="M84 380 V420 M728 380 V420 M84 406 H728"/>
+    <path d="M84 406 l10 -5 v10 z M728 406 l-10 -5 v10 z" fill="#1455A3"/>
+    <circle cx="134" cy="292" r="30" stroke-dasharray="4 5"/>
+  </g>
+</svg>
