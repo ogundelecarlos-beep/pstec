@@ -1,0 +1,74 @@
+/*
+ * Design tokens — PROPOSTA inicial.
+ * Navy e verde extraídos da logo enviada; verde de ação escurecido para
+ * contraste AA com texto branco. Substituir pelos valores do manual de marca.
+ * Contrastes verificados: ver VALIDACAO.md.
+ */
+:root {
+  /* Marca */
+  --brand-blue: #1455a3;        /* títulos, links — 7,3:1 sobre branco */
+  --brand-blue-dark: #1b2a4a;   /* navy da logo: hero, rodapé */
+  --brand-blue-deeper: #0e1a30;
+  --brand-green: #3f7d1c;       /* ações comerciais — 5,0:1 com texto branco */
+  --brand-green-hover: #336716;
+  --brand-green-logo: #7ab929;  /* verde da logo: detalhes e texto sobre navy (5,9:1) */
+  --brand-green-soft: #eef6e6;
+
+  /* Texto e superfícies */
+  --text-primary: #152536;
+  --text-secondary: #526170;    /* 5,9:1 sobre surface-muted */
+  --text-on-dark: #ffffff;
+  --text-on-dark-muted: #c4cfdc;
+  --surface: #ffffff;
+  --surface-muted: #f3f6f8;
+  --surface-dark: var(--brand-blue-dark);
+  --border: #d6dfe7;
+  --border-strong: #8a99a8;     /* bordas de campos: 3:1 sobre branco */
+  --error: #b42318;
+  --error-soft: #fef3f2;
+  --warning-soft: #fff7e6;
+  --warning-text: #7a4a00;
+  --focus: #1455a3;
+  --focus-on-dark: #a9e06b;
+
+  /* Tipografia */
+  --font-sans: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --leading: 1.6;
+  --h1: clamp(2rem, 1.35rem + 2.9vw, 3.5rem);
+  --h2: clamp(1.625rem, 1.25rem + 1.6vw, 2.5rem);
+  --h3: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem);
+
+  /* Espaçamento 4–96 */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 20px;
+  --section-y: 48px;
+  --header-h: 68px;
+
+  /* Forma e profundidade */
+  --radius-sm: 8px;
+  --radius: 10px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgb(11 37 69 / 0.06), 0 1px 1px rgb(11 37 69 / 0.04);
+  --shadow: 0 6px 20px -8px rgb(11 37 69 / 0.22);
+
+  /* Movimento: 160–280 ms, easing único */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 160ms;
+  --dur: 220ms;
+  --dur-slow: 280ms;
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 32px; --section-y: 80px; --header-h: 76px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur: 0ms; --dur-slow: 0ms; }
+}
