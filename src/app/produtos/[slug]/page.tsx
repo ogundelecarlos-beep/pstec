@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Icon } from '@/components/Icon';
 import { ProductCatalog } from '@/components/ProductCatalog';
-import { MediaFigure, Notice, PageHero, PendingBadge } from '@/components/ui';
+import { MediaFigure, PageHero, PendingBadge } from '@/components/ui';
 import { families, familyName, getProduct, products } from '@/content/products';
 import { siteUrl } from '@/content/site';
 import type { Field } from '@/content/types';
@@ -77,8 +77,8 @@ export default async function ProductPage({ params }: Props) {
         lead={product.summary}
       >
         <div className="btn-row" style={{ marginTop: 24 }}>
-          <Link href={`/contato?produto=${product.slug}#formulario`} className="btn btn--primary">
-            Tenho interesse nesta solução
+          <Link href={"/contato#formulario"} className="btn btn--primary">
+            Fale com a PSTEC
           </Link>
         </div>
       </PageHero>
@@ -86,7 +86,11 @@ export default async function ProductPage({ params }: Props) {
       <section className="section">
         <div className="container product-layout">
           <div style={{ display: 'grid', gap: 32 }}>
-            <MediaFigure media={product.image} priority showCaption sizes="(min-width: 960px) 58vw, 100vw" />
+            {product.image.kind === 'ilustracao' ? (
+              <MediaFigure media={product.image} priority showCaption sizes="(min-width: 960px) 58vw, 100vw" />
+            ) : (
+              <MediaFigure media={product.image} priority showCaption contain sizes="(min-width: 960px) 58vw, 100vw" className="photo-frame" />
+            )}
 
             <div className="prose">
               <h2>Descrição</h2>
@@ -107,31 +111,16 @@ export default async function ProductPage({ params }: Props) {
                 </tbody>
               </table>
             </div>
-
-            {product.photo && (
-              <div>
-                <h2 style={{ marginBottom: 16 }}>Registro fotográfico</h2>
-                <div className="photo-pair">
-                  <MediaFigure media={product.photo} showCaption contain sizes="(min-width: 960px) 35vw, 100vw" className="photo-frame" />
-                  <Notice>
-                    <p>
-                      Foto recebida em baixa resolução e tratada digitalmente (recorte, redução de ruído, ampliação e correção de cor). Para a
-                      versão pública, recomenda-se sessão fotográfica profissional da peça.
-                    </p>
-                  </Notice>
-                </div>
-              </div>
-            )}
           </div>
 
-          <aside className="sticky-aside" aria-label="Solicitar orçamento">
+          <aside className="sticky-aside" aria-label="Contato">
             <div className="panel">
-              <h2 style={{ fontSize: 'var(--h3)', color: 'var(--text-primary)' }}>Solicite um orçamento deste item</h2>
+              <h2 style={{ fontSize: 'var(--h3)', color: 'var(--text-primary)' }}>Interessado nesta peça?</h2>
               <p style={{ color: 'var(--text-secondary)' }}>
-                Informe aplicação, quantidade e, se houver, desenho de referência. A equipe técnica avalia cada solicitação.
+                Deixe seu contato e a equipe da PSTEC retorna para conversar sobre a sua aplicação.
               </p>
-              <Link href={`/contato?produto=${product.slug}#formulario`} className="btn btn--primary btn--block btn--shine">
-                Tenho interesse nesta solução
+              <Link href={"/contato#formulario"} className="btn btn--primary btn--block btn--shine">
+                Fale com a PSTEC
                 <Icon name="arrow" />
               </Link>
               {wa ? (

@@ -78,7 +78,7 @@ export default function EmpresaPage() {
             <article className="card card--plain">
               <span className="card__icon"><Icon name="mail" /></span>
               <h3>Canal direto</h3>
-              <p>Contato com a equipe para tirar dúvidas e solicitar orçamento.</p>
+              <p>Contato com a equipe para tirar dúvidas e conversar sobre sua aplicação.</p>
             </article>
           </div>
         </div>

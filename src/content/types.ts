@@ -77,6 +77,9 @@ export type Service = {
   note?: string;
 };
 
+/** Setores desenhados na ilustração conceitual da produção. */
+export type SectorId = 'conformacao' | 'montagem' | 'inspecao' | 'estoque' | 'expedicao';
+
 export type StructureCategory = 'Estrutura' | 'Equipamentos' | 'Processos' | 'Automações';
 
 export type StructureItem = {

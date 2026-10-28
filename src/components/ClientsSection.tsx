@@ -3,12 +3,14 @@ import { Icon } from './Icon';
 import { SectionTitle } from './ui';
 
 /**
- * Grade de marcas com divisórias. Nomes e logos só com relação e uso
- * aprovados; sem contadores, selos ou depoimentos.
+ * Grade de clientes com divisórias. Nomes e logos só com relação e uso
+ * aprovados; sem contadores ou depoimentos. Nome em texto até haver logo oficial.
  */
 export function ClientsSection() {
-  const clients = publicClients();
-  const anyApproved = clients.some((c) => c.approved);
+  const all = publicClients();
+  const anyApproved = all.some((c) => c.approved);
+  // Com ao menos um aprovado, os pendentes saem da grade (sem “Cliente 08”).
+  const clients = anyApproved ? all.filter((c) => c.approved) : all;
 
   return (
     <section className="section" aria-labelledby="clientes">
@@ -16,10 +18,10 @@ export function ClientsSection() {
         <SectionTitle
           id="clientes"
           eyebrow="Referências comerciais"
-          title={anyApproved ? 'Empresas que confiam na PSTEC' : 'Espaço para clientes e referências comerciais — em validação'}
+          title={anyApproved ? 'Clientes que confiam na PSTEC' : 'Espaço para clientes e referências comerciais — em validação'}
           lead={
             anyApproved
-              ? undefined
+              ? 'Algumas das empresas atendidas pela PSTEC.'
               : 'As marcas serão exibidas somente após confirmação da relação comercial e autorização de uso de nome e logo.'
           }
         />
@@ -30,7 +32,7 @@ export function ClientsSection() {
                 <img src={c.logo} alt={c.label} loading="lazy" style={{ maxHeight: 48, width: 'auto' }} />
               ) : (
                 <>
-                  <span className="brand-cell__mono">{c.label.toUpperCase()}</span>
+                  <span className={c.approved ? 'brand-cell__name' : 'brand-cell__mono'}>{c.approved ? c.label : c.label.toUpperCase()}</span>
                   {!c.approved && <small>Aprovação pendente</small>}
                 </>
               )}

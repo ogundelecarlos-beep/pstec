@@ -5,6 +5,7 @@ import type { Field } from './types';
  * Troque valores aqui — nenhuma página repete telefone, e-mail ou endereço.
  */
 
+const CLIENT_REQUEST = 'Pedido de melhorias da PSTEC repassado em 28/10/2026';
 const PUBLIC_REF = 'https://teste682.webnode.page/ (consultada em 23/10/2026)';
 
 export const flags = {
@@ -31,6 +32,13 @@ export const company = {
     note: 'Razão social completa e CNPJ dependem de validação da PSTEC.',
   } as Field<string>,
   context: { value: 'Industrial e elétrico', status: 'briefing' } as Field<string>,
+  tagline: {
+    value: 'Componentes e soluções técnicas para transmissão de energia',
+    status: 'aprovado',
+    source: CLIENT_REQUEST,
+  } as Field<string>,
+  /** Tempo de mercado informado pela PSTEC. O ano de fundação não foi informado — não calcular. */
+  yearsInMarket: { value: 30, status: 'aprovado', source: CLIENT_REQUEST } as Field<number>,
   city: { value: 'Franco da Rocha — SP', status: 'briefing' } as Field<string>,
   street: { value: 'Avenida Pacaembu', status: 'referencia_publica_nao_validada', source: PUBLIC_REF } as Field<string>,
   number: {
@@ -81,7 +89,7 @@ export const regionMap = {
 };
 
 export const whatsappDefaultMessage =
-  'Olá! Conheci a PSTEC pelo site e gostaria de conversar sobre um orçamento.';
+  'Olá! Conheci a PSTEC pelo site e gostaria de falar com a equipe.';
 
 /** Um dado só vira canal clicável quando aprovado. */
 export function isApproved<T>(field: Field<T>): field is Field<T> & { value: T } {

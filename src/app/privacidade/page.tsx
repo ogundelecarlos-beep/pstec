@@ -21,7 +21,7 @@ export default function PrivacidadePage() {
           <Notice>Documento provisório do protótipo — não constitui política oficial da PSTEC.</Notice>
           <h2>Dados do formulário</h2>
           <p>
-            Nesta versão de demonstração, o formulário de orçamento apenas valida os campos no seu navegador. Nenhum dado é enviado,
+            Nesta versão de demonstração, o formulário de contato apenas valida os campos no seu navegador. Nenhum dado é enviado,
             armazenado em servidor, registrado em logs ou compartilhado.
           </p>
           <p>

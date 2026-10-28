@@ -1,47 +1,58 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ClientsSection } from '@/components/ClientsSection';
-import { CompareSlider } from '@/components/CompareSlider';
 import { ContactLocation } from '@/components/ContactLocation';
 import { HeroStage } from '@/components/HeroStage';
 import { Icon } from '@/components/Icon';
 import { TraceDivider } from '@/components/Motion';
 import { ProductCatalog } from '@/components/ProductCatalog';
-import { FacilityExplorer } from '@/components/FacilityExplorer';
-import { Notice, PendingBadge, SectionTitle } from '@/components/ui';
+import { SealsSection } from '@/components/SealsSection';
+import { SectorsSection } from '@/components/SectorsSection';
+import { PendingBadge, SectionTitle } from '@/components/ui';
 import { families, products } from '@/content/products';
 import { services } from '@/content/services';
+import { company } from '@/content/site';
 
 export const metadata: Metadata = {
-  title: { absolute: 'PSTEC — Componentes e soluções técnicas para aplicações industriais' },
+  title: { absolute: 'PSTEC — Componentes e soluções técnicas para transmissão de energia' },
   description:
-    'Conheça os componentes em cobre, alumínio, aço inoxidável e contatos elétricos da PSTEC — Produtos e Serviços Técnicos, em Franco da Rocha — SP.',
+    'Há 30 anos no mercado. Conheça os componentes em cobre, alumínio, aço inoxidável e contatos elétricos da PSTEC — Produtos e Serviços Técnicos, em Franco da Rocha — SP.',
   alternates: { canonical: '/' },
 };
 
 const serviceIcons = ['ruler', 'layers', 'gear', 'shield'] as const;
 
 export default function Home() {
+  const years = company.yearsInMarket.value;
   return (
     <>
       {/* Momento 1 — Hero */}
       <HeroStage />
 
-      {/* Quem somos — leitura tranquila */}
+      {/* 30 anos de trabalho */}
       <section className="section" aria-labelledby="quem-somos" id="quem-somos-secao">
-        <div className="container split reveal">
+        <div className="container years-band reveal">
+          <p className="years-band__num" aria-hidden="true">
+            <strong>{years}</strong>
+            <span>anos</span>
+          </p>
           <div>
-            <SectionTitle id="quem-somos" eyebrow="Quem somos" title="Fabricação de componentes técnicos em Franco da Rocha — SP" />
+            <SectionTitle id="quem-somos" eyebrow="30 anos de trabalho" title={`Há ${years} anos no mercado de transmissão de energia`} />
             <div className="prose">
               <p>
-                A PSTEC — Produtos e Serviços Técnicos atua no contexto industrial e elétrico, com componentes em cobre, alumínio e aço
-                inoxidável e contatos para equipamentos elétricos.
+                A PSTEC — Produtos e Serviços Técnicos está há {years} anos no mercado, fabricando em Franco da Rocha — SP componentes em
+                cobre, alumínio e aço inoxidável e contatos para equipamentos elétricos.
               </p>
               <p>
                 Cada solicitação começa por entender a aplicação do cliente, para orientar especificação, material e acabamento com a equipe
                 técnica.
               </p>
             </div>
+            <ul className="years-band__facts">
+              <li><strong>{years} anos</strong><span>de atuação no mercado</span></li>
+              <li><strong>Sob desenho</strong><span>peças conforme desenho ou amostra do cliente</span></li>
+              <li><strong>Franco da Rocha — SP</strong><span>fabricação própria</span></li>
+            </ul>
             <div className="btn-row" style={{ marginTop: 24 }}>
               <Link href="/empresa" className="btn btn--ghost">
                 Conhecer a empresa
@@ -49,36 +60,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <figure className="media" style={{ aspectRatio: '4 / 3', background: 'var(--metal)', border: '1px solid var(--border)' }}>
-            <span className="media__label badge badge--pending">
-              <Icon name="clock" />
-              Foto das instalações pendente
-            </span>
-            <div className="structure-card__ph" style={{ height: '100%', display: 'grid', placeContent: 'center', color: 'var(--text-secondary)' }}>
-              <Icon name="factory" />
-              <span>Espaço reservado para foto real da fachada ou da área produtiva da PSTEC.</span>
-            </div>
-          </figure>
-        </div>
-      </section>
-
-      {/* Momento 2 — Comparador */}
-      <section className="section compare-section" aria-labelledby="detalhe">
-        <div className="container compare-layout">
-          <div>
-            <SectionTitle
-              id="detalhe"
-              eyebrow="Do detalhe à aplicação"
-              title="Do desenho à peça"
-              lead="Arraste o controle para comparar a mesma representação conceitual em linhas técnicas e com volume. Cada componente começa por um entendimento preciso da aplicação."
-            />
-            <ul className="checklist" style={{ marginTop: 0 }}>
-              <li><Icon name="ruler" />Leitura do desenho ou da amostra</li>
-              <li><Icon name="layers" />Definição de material e acabamento com a equipe</li>
-              <li><Icon name="check" />Validação técnica antes do orçamento</li>
-            </ul>
-          </div>
-          <CompareSlider />
         </div>
       </section>
 
@@ -98,8 +79,7 @@ export default function Home() {
           />
           <ProductCatalog products={products.slice(0, 4)} families={families} showFilters={false} headingLevel="h3" gridClass="grid--4" />
           <p className="action-note" style={{ marginTop: 20 }}>
-            Imagens identificadas como “Ilustração técnica” foram criadas para o protótipo a partir das fotos recebidas e não representam
-            medidas reais.
+            Fotos reais enviadas pela PSTEC, tratadas digitalmente. Serão substituídas por fotos profissionais das peças.
           </p>
         </div>
       </section>
@@ -124,55 +104,24 @@ export default function Home() {
             ))}
           </div>
           <div className="btn-row" style={{ marginTop: 32 }}>
-            <Link href="/servicos" className="btn btn--ghost">
-              Ver serviços
+            <Link href="/servicos" className="btn btn--primary">
+              Explorar serviços
               <Icon name="arrow" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Momento 3 — Estrutura explorável */}
-      <section className="section section--dark on-dark" aria-labelledby="estrutura">
-        <div className="container">
-          <SectionTitle
-            id="estrutura"
-            eyebrow="Estrutura"
-            title="Explore uma célula de produção"
-            lead="Toque nos pontos para conhecer cada etapa representada. A ilustração é conceitual e será substituída por fotos e vídeos reais da PSTEC."
-            action={
-              <Link href="/estrutura" className="btn btn--secondary">
-                Ver galeria
-              </Link>
-            }
-          />
-          <FacilityExplorer />
-        </div>
-      </section>
+      {/* Setores */}
+      <SectorsSection />
 
       <TraceDivider />
 
       {/* Marcas */}
       <ClientsSection />
 
-      {/* Qualidade */}
-      <section className="section section--muted" aria-labelledby="qualidade">
-        <div className="container split reveal">
-          <div>
-            <SectionTitle id="qualidade" eyebrow="Qualidade" title="Qualidade e documentos técnicos" />
-            <Notice tone="info">Informações de qualidade e documentos técnicos serão disponibilizados após validação.</Notice>
-          </div>
-          <div className="panel">
-            <h3>Área preparada para</h3>
-            <ul className="checklist" style={{ marginTop: 0 }}>
-              <li><Icon name="doc" />Documentos técnicos de produtos aprovados</li>
-              <li><Icon name="shield" />Certificados vigentes, com número e validade</li>
-              <li><Icon name="check" />Descrição do controle de qualidade adotado</li>
-            </ul>
-            <Link href="/qualidade" className="btn btn--link">Saiba mais sobre a área de qualidade</Link>
-          </div>
-        </div>
-      </section>
+      {/* Selos */}
+      <SealsSection />
 
       {/* Encerramento — Contato & Localização */}
       <ContactLocation />

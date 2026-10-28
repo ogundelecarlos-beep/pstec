@@ -24,13 +24,11 @@ export function QuickView({
   returnFocusTo: HTMLElement | null;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
-  const [view, setView] = useState<'ilustracao' | 'foto'>('ilustracao');
   const [zoom, setZoom] = useState(0);
 
   useEffect(() => {
     const d = ref.current;
     if (product && d && !d.open) {
-      setView('ilustracao');
       setZoom(0);
       d.showModal();
     }
@@ -43,7 +41,8 @@ export function QuickView({
 
   if (!product) return <dialog ref={ref} className="drawer" aria-label="Visualização rápida" onClose={handleClose} />;
 
-  const media = view === 'foto' && product.photo ? product.photo : product.image;
+  const media = product.image;
+  const isDrawing = media.kind === 'ilustracao';
   const scale = ZOOM_STEPS[zoom];
 
   return (
@@ -58,21 +57,10 @@ export function QuickView({
       <div className="drawer__body">
         <h2 id="qv-title">{product.name}</h2>
 
-        {product.photo && (
-          <div className="view-tabs" role="group" aria-label="Tipo de imagem">
-            <button type="button" aria-pressed={view === 'ilustracao'} onClick={() => { setView('ilustracao'); setZoom(0); }}>
-              Ilustração técnica
-            </button>
-            <button type="button" aria-pressed={view === 'foto'} onClick={() => { setView('foto'); setZoom(0); }}>
-              Foto recebida
-            </button>
-          </div>
-        )}
-
         <figure style={{ margin: 0, display: 'grid', gap: 8 }}>
-          <div className={`zoom-frame${view === 'ilustracao' ? ' zoom-frame--light' : ''}`}>
+          <div className={`zoom-frame${isDrawing ? ' zoom-frame--light' : ''}`}>
             <span className="media__label badge badge--dark" style={{ zIndex: 2 }}>
-              <Icon name={view === 'foto' ? 'info' : 'image'} />
+              <Icon name={isDrawing ? 'image' : 'info'} />
               {media.label}
             </span>
             {media.src && <img src={media.src} alt={media.alt} width={media.width} height={media.height} style={{ transform: `scale(${scale})` }} />}
@@ -81,7 +69,7 @@ export function QuickView({
             <button type="button" onClick={() => setZoom((z) => Math.max(0, z - 1))} disabled={zoom === 0} aria-label="Diminuir zoom">−</button>
             <output aria-live="polite">{Math.round(scale * 100)}%</output>
             <button type="button" onClick={() => setZoom((z) => Math.min(ZOOM_STEPS.length - 1, z + 1))} disabled={zoom === ZOOM_STEPS.length - 1} aria-label="Aumentar zoom">+</button>
-            <span className="hint">Zoom limitado a 250%. {view === 'foto' ? 'Foto de baixa resolução, tratada digitalmente.' : 'Ilustração sem medidas reais.'}</span>
+            <span className="hint">Zoom limitado a 250%. {isDrawing ? 'Ilustração sem medidas reais.' : 'Foto real de baixa resolução, tratada digitalmente.'}</span>
           </div>
         </figure>
 
@@ -89,8 +77,8 @@ export function QuickView({
         <p className="hint">Especificações técnicas sob consulta — validar com a equipe da PSTEC.</p>
       </div>
       <div className="drawer__foot">
-        <Link href={`/contato?produto=${product.slug}#formulario`} className="btn btn--primary btn--block btn--shine">
-          Tenho interesse nesta solução
+        <Link href={"/contato#formulario"} className="btn btn--primary btn--block btn--shine">
+          Fale com a PSTEC
           <Icon name="arrow" />
         </Link>
         <Link href={`/produtos/${product.slug}`} className="btn btn--ghost btn--block">

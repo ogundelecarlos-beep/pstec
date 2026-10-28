@@ -53,7 +53,7 @@ export default function ServicosPage() {
           </div>
           <div className="btn-row">
             <Link href="/contato#formulario" className="btn btn--primary">
-              Solicitar orçamento
+              Fale com a PSTEC
               <Icon name="arrow" />
             </Link>
             <Link href="/produtos" className="btn btn--secondary">Ver produtos</Link>

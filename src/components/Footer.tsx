@@ -34,7 +34,7 @@ export function Footer() {
             <ul className="footer-list">
               <li><Link href="/qualidade">Qualidade</Link></li>
               <li><Link href="/privacidade">Privacidade</Link></li>
-              <li><Link href="/contato#formulario">Solicitar orçamento</Link></li>
+              <li><Link href="/contato#formulario">Fale com a PSTEC</Link></li>
             </ul>
           </div>
           <div>

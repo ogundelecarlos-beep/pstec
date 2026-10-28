@@ -2,6 +2,8 @@ import type { Field, MediaAsset, Product, ProductFamily } from './types';
 
 /**
  * Catálogo DEMONSTRATIVO (status `proposta`).
+ * Imagem principal = foto real enviada pela PSTEC (pedido de 28/10/2026: “fotos
+ * reais”, sem desenho em linhas). Ilustração só onde não há foto.
  * Famílias derivadas da página pública não validada; itens derivados das fotos
  * enviadas pelo usuário. Nenhuma especificação técnica foi inventada: campos
  * desconhecidos ficam null e aparecem como “Sob consulta — validar especificação”.
@@ -81,8 +83,7 @@ export const products: Product[] = [
     summary: 'Conexão formada por lâminas sobrepostas, com extremidades compactadas e furação para fixação.',
     description:
       'Peça flexível composta por lâminas finas sobrepostas, conformadas em curva para absorver movimento entre pontos de conexão. As extremidades aparecem compactadas e com acabamento superficial distinto. Material, número de lâminas, seção e acabamento devem ser confirmados pela equipe técnica da PSTEC.',
-    image: illustration('product-copper', 'cobre-laminado', 'Ilustração de conexão flexível de lâminas de cobre em formato de onda, com duas extremidades planas furadas'),
-    photo: photo('photo-copper', 'conexao-laminada', 480, 1275, 'Foto de conexão flexível laminada em cobre com curva em S sobre bancada azul'),
+    image: photo('photo-copper', 'conexao-laminada', 480, 1275, 'Foto de conexão flexível laminada em cobre com curva em S sobre bancada azul'),
     materials: { value: ['Cobre (aparente na foto — validar)'], status: 'pendente' },
     application: pending('Aplicação sob consulta — validar com responsável técnico'),
     process: pending(),
@@ -99,8 +100,7 @@ export const products: Product[] = [
     summary: 'Cordoalha trançada com terminais planos furados nas duas extremidades.',
     description:
       'Conexão flexível em cordoalha trançada, com terminais planos e furação para fixação por parafuso. O material da cordoalha e o acabamento dos terminais aparecem estanhados na foto, mas dependem de confirmação técnica.',
-    image: illustration('product-braid', 'cordoalha-terminais', 'Ilustração de cordoalha trançada metálica com dois terminais planos furados'),
-    photo: photo('photo-braid', 'cordoalha-terminais', 438, 1275, 'Foto de cordoalha trançada com terminais metálicos furados'),
+    image: photo('photo-braid', 'cordoalha-terminais', 438, 1275, 'Foto de cordoalha trançada com terminais metálicos furados'),
     materials: { value: ['Cordoalha trançada (material a confirmar)'], status: 'pendente' },
     application: pending('Aplicação sob consulta — validar com responsável técnico'),
     process: pending(),
@@ -117,8 +117,7 @@ export const products: Product[] = [
     summary: 'Barra conformada em dois planos, com furações nas abas e no corpo central.',
     description:
       'Peça em barra conformada com dobras e furações distribuídas nas abas e no corpo. A geometria e o padrão de furos variam conforme o projeto. Liga, espessura, raio de dobra e tolerâncias não foram informados.',
-    image: illustration('product-aluminum', 'barra-aluminio', 'Ilustração de barra de alumínio dobrada em Z com furos nas abas e no centro'),
-    photo: photo('photo-aluminum', 'barra-aluminio', 660, 900, 'Foto de barra metálica dobrada com seis furos centrais e furos nas abas'),
+    image: photo('photo-aluminum', 'barra-aluminio', 660, 900, 'Foto de barra metálica dobrada com seis furos centrais e furos nas abas'),
     materials: { value: ['Alumínio (aparente na foto — validar)'], status: 'pendente' },
     application: pending('Aplicação sob consulta — validar com responsável técnico'),
     process: pending(),
@@ -135,8 +134,7 @@ export const products: Product[] = [
     summary: 'Conjunto com barra, cordoalha protegida por luva e grampo metálico de fixação.',
     description:
       'Conjunto montado com barra, cordoalha flexível com proteção externa e grampo de fixação com parafuso. Os componentes metálicos de fixação aparentam ser em aço inoxidável; materiais e função do conjunto dependem de validação técnica.',
-    image: illustration('product-steel', 'conjunto-cordoalha', 'Ilustração de conjunto vertical com barra escura, cordoalha com luva azul e grampo metálico'),
-    photo: photo('photo-steel', 'conjunto-cordoalha', 510, 1287, 'Foto de conjunto vertical com cordoalha protegida por luva azul e grampo metálico'),
+    image: photo('photo-steel', 'conjunto-cordoalha', 510, 1287, 'Foto de conjunto vertical com cordoalha protegida por luva azul e grampo metálico'),
     materials: { value: ['Componentes de fixação em aço inoxidável (aparente — validar)'], status: 'pendente' },
     application: pending('Aplicação sob consulta — validar com responsável técnico'),
     process: pending(),
@@ -153,8 +151,7 @@ export const products: Product[] = [
     summary: 'Barras paralelas unidas por cordoalha flexível, com parafusos de fixação nas extremidades.',
     description:
       'Conjunto de contato composto por barras paralelas, cordoalha flexível e fixação por parafusos e porcas. Aplicação, compatibilidade com equipamentos e capacidade elétrica não foram informadas e não devem ser presumidas.',
-    image: illustration('product-contact', 'contato-cordoalha', 'Ilustração de conjunto de contato com barras de bronze paralelas, parafusos e cordoalha'),
-    photo: photo('photo-contact', 'contato-cordoalha', 360, 642, 'Foto de conjunto de contato com barras paralelas, parafusos e cordoalha lateral'),
+    image: photo('photo-contact', 'contato-cordoalha', 360, 642, 'Foto de conjunto de contato com barras paralelas, parafusos e cordoalha lateral'),
     materials: pending('Materiais sob consulta — validar especificação'),
     application: pending('Aplicação não certificada — validar com responsável técnico'),
     process: pending(),

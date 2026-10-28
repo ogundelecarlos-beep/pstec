@@ -96,7 +96,7 @@ export function ContactLocation() {
             <div className="contact-actions">
               <Link className="btn btn--primary btn--shine" href="/contato#formulario">
                 <Icon name="mail" />
-                Solicitar orçamento
+                Enviar mensagem
               </Link>
               {wa ? (
                 <a className="btn btn--ghost" href={wa} target="_blank" rel="noopener noreferrer">

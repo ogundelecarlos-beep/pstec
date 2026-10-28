@@ -61,7 +61,7 @@ export function Header() {
 
         <div className="header-actions">
           <Link href="/contato#formulario" className="btn btn--primary header-cta">
-            Solicitar orçamento
+            Fale com a PSTEC
           </Link>
           <button
             ref={toggleRef}
@@ -117,7 +117,7 @@ export function Header() {
           </nav>
           <div className="mobile-menu__cta">
             <Link href="/contato#formulario" className="btn btn--primary btn--block" onClick={() => setOpen(false)}>
-              Solicitar orçamento
+              Fale com a PSTEC
             </Link>
           </div>
         </div>

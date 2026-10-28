@@ -175,13 +175,13 @@ export function ProductCatalog({
         <div className="empty-state">
           <Icon name="search" className="card__icon" />
           <h2 style={{ fontSize: 'var(--h3)' }}>Nenhum item corresponde aos filtros</h2>
-          <p>Revise o termo buscado ou descreva sua necessidade no formulário de orçamento.</p>
+          <p>Revise o termo buscado ou fale com a equipe pelo formulário de contato.</p>
           <div className="btn-row" style={{ justifyContent: 'center' }}>
             <button type="button" className="btn btn--secondary" onClick={clear}>
               Limpar filtros
             </button>
             <Link href="/contato#formulario" className="btn btn--primary">
-              Solicitar orçamento
+              Fale com a PSTEC
             </Link>
           </div>
         </div>
