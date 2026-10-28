@@ -234,3 +234,27 @@ Sem regressão perceptível. Metas LCP ≤ 2,5 s e INP ≤ 200 ms continuam não
 - Testes de toque usam emulação do DevTools, não aparelho físico; reflexo do ponteiro testado por eventos sintéticos (não com mouse físico).
 - Leitores de tela e zoom de 200% sem auditoria formal.
 - Todos os ativos novos são conceituais; dependem dos materiais listados em `PENDENCIAS-PRODUCAO.md` §11 para produção.
+
+# Rodada 4 — pedido de melhorias (28/10/2026)
+
+## Verificações executadas
+
+Edge headless via DevTools Protocol (script de verificação temporário, a partir do `scripts/capture.mjs`), servidor `next dev` na porta 3101:
+
+| Verificação | Resultado |
+|---|---|
+| Faixa de fotos anda sozinha | 28,2 px/s medidos em 2 s |
+| Mouse sobre a faixa desacelera | 7,1 px/s (25%) |
+| Arrastar 250 px com o mouse | faixa moveu (com inércia) e a página **não** navegou |
+| Clique simples numa foto | abriu `/produtos/conexao-cordoalha-terminais`, a peça sob o cursor |
+| Movimento reduzido | faixa começa parada; “Iniciar movimento” liga (verificado no painel do navegador) |
+| `/contato?produto=…` | sem campo de assunto/produto e sem cartão “Item selecionado”; campos: nome, empresa, e-mail, telefone, mensagem |
+| Celular 390 px | sem rolagem horizontal |
+| `tsc --noEmit` | sem erros |
+| Busca por “orçamento” e `produto=` em `src/` | nenhuma ocorrência fora do catálogo |
+
+## Limitações
+
+- Toque real (arrastar a faixa no celular) não testado em aparelho físico; o arrasto usa Pointer Events e `touch-action: pan-y`.
+- `next build` passou (19 páginas estáticas). Lighthouse não foi executado nesta rodada.
+- Capturas de página inteira com animação de entrada deixam as seções abaixo da dobra em branco (efeito da captura, não do site). As capturas foram feitas com movimento reduzido.
